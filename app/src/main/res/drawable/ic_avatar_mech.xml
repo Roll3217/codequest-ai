@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <path
+        android:fillColor="#042F2E"
+        android:pathData="M0,0h96v96h-96z" />
+    <!-- Android / Mech Head Base -->
+    <path
+        android:fillColor="#0D9488"
+        android:pathData="M48,16C28,16 18,30 18,50v14c0,10 10,18 30,18s30,-8 30,-18V50C78,30 68,16 48,16z" />
+    <!-- Antenna Sensor -->
+    <path
+        android:fillColor="#2DD4BF"
+        android:pathData="M46,8h4v10h-4z" />
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M44,4h8v5h-8z" />
+    <!-- Optical Visor -->
+    <path
+        android:fillColor="#0F172A"
+        android:pathData="M24,36h48v16H24z" />
+    <!-- Glowing Eyes / Hologram Scan -->
+    <path
+        android:fillColor="#22D3EE"
+        android:pathData="M28,40h16v8H28zM52,40h16v8H52z" />
+    <!-- Audio / Voice Grille -->
+    <path
+        android:fillColor="#14B8A6"
+        android:pathData="M36,66h24v4H36zM40,72h16v3H40z" />
+</vector>

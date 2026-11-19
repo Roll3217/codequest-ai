@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cq_background"
+    android:orientation="vertical">
+
+    <!-- Header Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cq_surface"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/space_grotesk"
+                android:text="AI Coding Mentor"
+                android:textColor="@color/cq_text_primary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_ai_status_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_pill_purple"
+                android:fontFamily="@font/jetbrains_mono"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:text="AI MENTOR"
+                android:textColor="@color/cq_text_primary"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/space_grotesk"
+            android:text="Get instant approach explanations, complexity breakdowns, and debugging tips."
+            android:textColor="@color/cq_text_secondary"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/cq_card_stroke" />
+
+    <!-- Learner Memory Card (Personalized AI context) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_ai_learner_memory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"
+        app:cardBackgroundColor="@color/cq_card_bg"
+        app:cardCornerRadius="14dp"
+        app:cardElevation="1dp"
+        app:strokeColor="@color/cq_card_stroke"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_ai_learner_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/space_grotesk"
+                    android:text="Mentoring Learner"
+                    android:textColor="@color/cq_text_primary"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_ai_edit_interests"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="48dp"
+                    android:minHeight="48dp"
+                    android:paddingHorizontal="10dp"
+                    android:text="Edit Focus"
+                    android:textColor="@color/cq_cyan_bright"
+                    android:textSize="11sp"
+                    app:icon="@drawable/ic_settings_gear"
+                    app:iconSize="13dp"
+                    app:iconTint="@color/cq_cyan_bright" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_ai_learner_interests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/jetbrains_mono"
+                android:text="🎯 Focus: Arrays, Dynamic Programming, Graphs"
+                android:textColor="@color/cq_cyan_bright"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Suggested Topics Quick Chips Strip -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cq_surface"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="6dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/layout_ai_quick_prompts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/chip_ai_two_sum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_pill_cyan"
+                android:gravity="center"
+                android:paddingHorizontal="14dp"
+                android:text="Two Sum Approach"
+                android:textColor="@color/cq_text_primary"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/chip_ai_kadane"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_pill_cyan"
+                android:gravity="center"
+                android:paddingHorizontal="14dp"
+                android:text="Kadane's Algorithm"
+                android:textColor="@color/cq_text_primary"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/chip_ai_sliding_window"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_pill_cyan"
+                android:gravity="center"
+                android:paddingHorizontal="14dp"
+                android:text="Sliding Window vs 2 Pointers"
+                android:textColor="@color/cq_text_primary"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/chip_ai_big_o"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_pill_cyan"
+                android:gravity="center"
+                android:paddingHorizontal="14dp"
+                android:text="Big-O Complexity"
+                android:textColor="@color/cq_text_primary"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/cq_card_stroke" />
+
+    <!-- Chat & Response Area -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_ai_conversation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Question Card (User) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_ai_user_query"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/cq_card_elevated_bg"
+                app:cardCornerRadius="14dp"
+                app:strokeColor="@color/cq_cyan_bright"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/jetbrains_mono"
+                        android:text="YOU ASKED:"
+                        android:textColor="@color/cq_cyan_bright"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_ai_user_query_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/cq_text_primary"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Loading Indicator -->
+            <LinearLayout
+                android:id="@+id/layout_ai_loading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:visibility="gone">
+
+                <ProgressBar
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:indeterminate="true"
+                    android:indeterminateTint="@color/cq_purple_glow" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/space_grotesk"
+                    android:text="AI Mentor is analyzing..."
+                    android:textColor="@color/cq_purple_glow"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- AI Response Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_ai_response"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/cq_card_bg"
+                app:cardCornerRadius="16dp"
+                app:strokeColor="@color/cq_card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:contentDescription="AI"
+                            android:src="@drawable/ic_nav_ai"
+                            app:tint="@color/cq_purple_glow" />
+
+                        <TextView
+                            android:id="@+id/tv_ai_response_title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/space_grotesk"
+                            android:text="Mentor Guidance"
+                            android:textColor="@color/cq_text_primary"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_ai_copy_response"
+                            style="@style/Widget.Material3.Button.TextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minWidth="48dp"
+                            android:minHeight="48dp"
+                            android:text="Copy"
+                            android:textColor="@color/cq_cyan_bright"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="8dp"
+                        android:background="@color/cq_card_stroke" />
+
+                    <TextView
+                        android:id="@+id/tv_ai_response_body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/jetbrains_mono"
+                        android:lineSpacingExtra="4dp"
+                        android:text="Welcome to your CodeQuest AI Mentor!\n\nAsk any question about algorithms, code optimization, time complexity, or debugging. Tap one of the suggested prompts above or type your question below."
+                        android:textColor="@color/cq_text_primary"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/cq_card_stroke" />
+
+    <!-- Bottom Input Dock -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cq_surface"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_ai_prompt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:maxHeight="120dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_code_editor"
+                android:hint="Ask a question or explain an algorithm..."
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine|textCapSentences"
+                android:maxLines="4"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="10dp"
+                android:textColor="@color/cq_text_primary"
+                android:textColorHint="@color/cq_text_secondary"
+                android:textSize="14sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_ai_send"
+                android:layout_width="54dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:padding="0dp"
+                android:text="Send"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/cq_primary"
+                app:cornerRadius="12dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

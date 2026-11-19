@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark Mode Futuristic Coding Surfaces & Text -->
+    <color name="cq_background">#090712</color>
+    <color name="cq_surface">#120E21</color>
+    <color name="cq_surface_elevated">#1A1530</color>
+    <color name="cq_surface_variant">#231C3E</color>
+    <color name="cq_card_bg">#151126</color>
+    <color name="cq_card_elevated_bg">#1E1836</color>
+    <color name="cq_card_stroke">#2E2552</color>
+    <color name="cq_input_bg">#110D1F</color>
+    <color name="cq_nav_bg">#120E22</color>
+
+    <color name="cq_primary">#8B5CF6</color>
+    <color name="cq_on_primary">#FFFFFF</color>
+    <color name="cq_primary_container">#2E1B5B</color>
+    <color name="cq_on_primary_container">#DDD6FE</color>
+
+    <color name="cq_secondary">#06B6D4</color>
+    <color name="cq_on_secondary">#042F38</color>
+    <color name="cq_secondary_container">#103745</color>
+    <color name="cq_on_secondary_container">#A5F3FC</color>
+
+    <color name="cq_text_primary">#F8FAFC</color>
+    <color name="cq_text_secondary">#94A3B8</color>
+    <color name="cq_text_muted">#64748B</color>
+    <color name="cq_divider">#241D40</color>
+
+    <color name="cq_success_bg">#0E362B</color>
+    <color name="cq_warning_bg">#3B2A10</color>
+    <color name="cq_error_bg">#3C151B</color>
+
+    <color name="cq_hero_gradient_start">#231347</color>
+    <color name="cq_hero_gradient_center">#14152E</color>
+    <color name="cq_hero_gradient_end">#0B2738</color>
+</resources>

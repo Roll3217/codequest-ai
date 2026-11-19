@@ -1,0 +1,1021 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cq_background"
+    android:orientation="vertical">
+
+    <!-- Top Workspace Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cq_surface"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp">
+
+        <ImageButton
+            android:id="@+id/btn_lab_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@color/cq_text_primary" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_lab_problem_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/space_grotesk"
+                android:maxLines="1"
+                android:text="Coding Lab"
+                android:textColor="@color/cq_text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_lab_problem_meta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/jetbrains_mono"
+                android:text="PB-01 • Easy • Programming Basics"
+                android:textColor="@color/cq_cyan_bright"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_lab_reset_code"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="Reset"
+            android:textColor="@color/cq_text_secondary"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Language Selector Bar: Kotlin, Java, Python, C++, C, JavaScript -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cq_surface"
+        android:paddingHorizontal="14dp"
+        android:paddingBottom="8dp"
+        android:scrollbars="none">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group_languages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:selectionRequired="true"
+            app:singleLine="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_lang_kotlin"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Kotlin" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_lang_java"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Java" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_lang_python"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Python" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_lang_cpp"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="C++" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_lang_c"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="C" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_lang_js"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="JavaScript" />
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/cq_card_stroke" />
+
+    <!-- Keyboard-safe Scrollable Workspace -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/lab_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:padding="14dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Problem Guide & Explanation Card (Beginner / Non-Tech Friendly) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_lab_problem_guide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@color/cq_card_bg"
+                app:cardCornerRadius="16dp"
+                app:strokeColor="@color/cq_card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <LinearLayout
+                        android:id="@+id/layout_guide_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/space_grotesk"
+                            android:text="📖 Problem Details / सवाल समझें"
+                            android:textColor="@color/cq_text_primary"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_guide_toggle_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jetbrains_mono"
+                            android:text="Hide Details ▲"
+                            android:textColor="@color/cq_purple_bright"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_guide_body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_lab_guide_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/space_grotesk"
+                            android:lineSpacingExtra="3dp"
+                            android:text="Write a program to solve this problem."
+                            android:textColor="@color/cq_text_primary"
+                            android:textSize="13sp" />
+
+                        <!-- I/O Visual Guide for Non-Tech Students -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal">
+
+                            <!-- Expected Input Box -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="6dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_box_input"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/space_grotesk"
+                                    android:text="📥 Input (क्या मिलेगा)"
+                                    android:textColor="@color/cq_text_secondary"
+                                    android:textSize="11sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tv_lab_guide_input"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:fontFamily="@font/jetbrains_mono"
+                                    android:text="5 10"
+                                    android:textColor="@color/cq_text_primary"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <!-- Expected Output Box -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_box_success"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/space_grotesk"
+                                    android:text="🎯 Output (क्या देना है)"
+                                    android:textColor="#166534"
+                                    android:textSize="11sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tv_lab_guide_output"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:fontFamily="@font/jetbrains_mono"
+                                    android:text="15 50"
+                                    android:textColor="#14532D"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- Example & Hint Section -->
+                        <TextView
+                            android:id="@+id/tv_lab_guide_example"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/space_grotesk"
+                            android:lineSpacingExtra="2dp"
+                            android:text="Example: Input '5 10' produces '15 50' (Sum = 15, Product = 50)."
+                            android:textColor="@color/cq_text_secondary"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/tv_lab_guide_hint"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:background="@drawable/bg_box_input"
+                            android:fontFamily="@font/space_grotesk"
+                            android:padding="8dp"
+                            android:text="💡 Hint: Read the integers from standard input and compute the result."
+                            android:textColor="@color/cq_purple_deep"
+                            android:textSize="11sp"
+                            android:visibility="gone" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_lab_toggle_hint"
+                            style="@style/Widget.Material3.Button.TextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minWidth="48dp"
+                            android:minHeight="48dp"
+                            android:layout_marginTop="4dp"
+                            android:paddingHorizontal="8dp"
+                            android:text="💡 Show Hint / संकेत देखें"
+                            android:textColor="@color/cq_purple_bright"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Monospace Code Editor Box -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_code_editor"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        android:id="@+id/tv_lab_editor_filename"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/jetbrains_mono"
+                        android:text="Solution.kt"
+                        android:textColor="@color/cq_purple_glow"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_lab_char_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/jetbrains_mono"
+                        android:text="UTF-8 • MONOSPACE"
+                        android:textColor="#64748B"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#241D40" />
+
+                <!-- Quick Action Tools: Copy, Format, Syntax Validator -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingVertical="4dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_lab_copy_code"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="48dp"
+                        android:minHeight="48dp"
+                        android:paddingHorizontal="8dp"
+                        android:text="Copy Code"
+                        android:textColor="@color/cq_cyan_bright"
+                        android:textSize="11sp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_lab_format_code"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="48dp"
+                        android:minHeight="48dp"
+                        android:paddingHorizontal="8dp"
+                        android:text="Format"
+                        android:textColor="@color/cq_purple_glow"
+                        android:textSize="11sp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_lab_check_syntax"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="48dp"
+                        android:minHeight="48dp"
+                        android:paddingHorizontal="8dp"
+                        android:text="Check Syntax"
+                        android:textColor="@color/cq_text_secondary"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <!-- Quick Symbol Keyboard Assistant Strip -->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    android:paddingVertical="2dp">
+
+                    <LinearLayout
+                        android:id="@+id/layout_quick_symbols"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/chip_sym_braces"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minWidth="48dp"
+                            android:minHeight="48dp"
+                            android:layout_marginEnd="6dp"
+                            android:background="@drawable/bg_pill_purple"
+                            android:gravity="center"
+                            android:paddingHorizontal="12dp"
+                            android:text="{ }"
+                            android:textColor="@color/cq_text_primary"
+                            android:fontFamily="@font/jetbrains_mono"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/chip_sym_parens"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minWidth="48dp"
+                            android:minHeight="48dp"
+                            android:layout_marginEnd="6dp"
+                            android:background="@drawable/bg_pill_purple"
+                            android:gravity="center"
+                            android:paddingHorizontal="12dp"
+                            android:text="( )"
+                            android:textColor="@color/cq_text_primary"
+                            android:fontFamily="@font/jetbrains_mono"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/chip_sym_brackets"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minWidth="48dp"
+                            android:minHeight="48dp"
+                            android:layout_marginEnd="6dp"
+                            android:background="@drawable/bg_pill_purple"
+                            android:gravity="center"
+                            android:paddingHorizontal="12dp"
+                            android:text="[ ]"
+                            android:textColor="@color/cq_text_primary"
+                            android:fontFamily="@font/jetbrains_mono"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/chip_sym_semicolon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minWidth="48dp"
+                            android:minHeight="48dp"
+                            android:layout_marginEnd="6dp"
+                            android:background="@drawable/bg_pill_cyan"
+                            android:gravity="center"
+                            android:paddingHorizontal="12dp"
+                            android:text=";"
+                            android:textColor="@color/cq_text_primary"
+                            android:fontFamily="@font/jetbrains_mono"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/chip_sym_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minWidth="48dp"
+                            android:minHeight="48dp"
+                            android:layout_marginEnd="6dp"
+                            android:background="@drawable/bg_pill_cyan"
+                            android:gravity="center"
+                            android:paddingHorizontal="12dp"
+                            android:text="-&gt;"
+                            android:textColor="@color/cq_text_primary"
+                            android:fontFamily="@font/jetbrains_mono"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/chip_sym_equals"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minWidth="48dp"
+                            android:minHeight="48dp"
+                            android:layout_marginEnd="6dp"
+                            android:background="@drawable/bg_pill_cyan"
+                            android:gravity="center"
+                            android:paddingHorizontal="12dp"
+                            android:text="=="
+                            android:textColor="@color/cq_text_primary"
+                            android:fontFamily="@font/jetbrains_mono"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/chip_sym_quotes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minWidth="48dp"
+                            android:minHeight="48dp"
+                            android:layout_marginEnd="6dp"
+                            android:background="@drawable/bg_pill_purple"
+                            android:gravity="center"
+                            android:paddingHorizontal="12dp"
+                            android:text='""'
+                            android:textColor="@color/cq_text_primary"
+                            android:fontFamily="@font/jetbrains_mono"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/chip_sym_tab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minWidth="48dp"
+                            android:minHeight="48dp"
+                            android:layout_marginEnd="6dp"
+                            android:background="@drawable/bg_pill_purple"
+                            android:gravity="center"
+                            android:paddingHorizontal="12dp"
+                            android:text="Tab  "
+                            android:textColor="@color/cq_text_primary"
+                            android:fontFamily="@font/jetbrains_mono"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <EditText
+                    android:id="@+id/et_code_editor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@null"
+                    android:fontFamily="@font/jetbrains_mono"
+                    android:gravity="top|start"
+                    android:hint="// Write your solution here…"
+                    android:importantForAutofill="no"
+                    android:inputType="textMultiLine|textNoSuggestions"
+                    android:lineSpacingExtra="4dp"
+                    android:minHeight="240dp"
+                    android:scrollbars="vertical"
+                    android:textColor="#F8FAFC"
+                    android:textColorHint="#64748B"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- Custom Input / Stdin Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_lab_custom_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                app:cardBackgroundColor="@color/cq_card_bg"
+                app:cardCornerRadius="16dp"
+                app:strokeColor="@color/cq_card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/space_grotesk"
+                            android:text="Custom Input (stdin)"
+                            android:textColor="@color/cq_text_primary"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_lab_input_reset"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minWidth="48dp"
+                            android:minHeight="48dp"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="6dp"
+                            android:fontFamily="@font/jetbrains_mono"
+                            android:text="Use Sample Input"
+                            android:textColor="@color/cq_cyan_bright"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/et_lab_custom_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_code_editor"
+                        android:fontFamily="@font/jetbrains_mono"
+                        android:gravity="top|start"
+                        android:hint="Custom input / stdin for Run…"
+                        android:importantForAutofill="no"
+                        android:inputType="textMultiLine"
+                        android:minHeight="48dp"
+                        android:padding="10dp"
+                        android:textColor="#F8FAFC"
+                        android:textColorHint="#64748B"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Execution & Verification Console Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_lab_console"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                app:cardBackgroundColor="@color/cq_card_bg"
+                app:cardCornerRadius="16dp"
+                app:strokeColor="@color/cq_card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/space_grotesk"
+                            android:text="Console &amp; Test Result / परिणाम"
+                            android:textColor="@color/cq_text_primary"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_lab_console_badge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jetbrains_mono"
+                            android:text="IDLE"
+                            android:textColor="@color/cq_cyan_bright"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <!-- Non-Tech Friendly 3-Box Visual I/O Comparison -->
+                    <LinearLayout
+                        android:id="@+id/layout_lab_io_comparison"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/space_grotesk"
+                            android:text="🔍 Input &amp; Output Comparison / इनपुट और आउटपुट:"
+                            android:textColor="@color/cq_text_primary"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <!-- Row 1: Given Input -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:background="@drawable/bg_box_input"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/space_grotesk"
+                                android:text="📥 Input Diya Gaya (Given Input):"
+                                android:textColor="@color/cq_text_secondary"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_lab_io_input"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:fontFamily="@font/jetbrains_mono"
+                                android:text="-"
+                                android:textColor="@color/cq_text_primary"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <!-- Row 2: Expected Output -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:background="@drawable/bg_box_success"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/space_grotesk"
+                                android:text="🎯 Sahi Output (Expected Output - Aana Chahiye Tha):"
+                                android:textColor="#166534"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_lab_io_expected"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:fontFamily="@font/jetbrains_mono"
+                                android:text="-"
+                                android:textColor="#14532D"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <!-- Row 3: User's Actual Output -->
+                        <LinearLayout
+                            android:id="@+id/layout_lab_io_actual_box"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:background="@drawable/bg_box_input"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:id="@+id/tv_lab_io_actual_label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/space_grotesk"
+                                android:text="💻 Aapke Code Ka Output (Your Output):"
+                                android:textColor="@color/cq_text_primary"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_lab_io_actual"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:fontFamily="@font/jetbrains_mono"
+                                android:text="-"
+                                android:textColor="@color/cq_text_primary"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Beginner-Friendly Error Helper Card (Line-by-Line & Plain Language Explanation) -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_lab_error_helper"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="@color/cq_error_bg"
+                        app:cardCornerRadius="12dp"
+                        app:strokeColor="@color/cq_error"
+                        app:strokeWidth="1.5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_lab_error_line_badge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/bg_pill_roast"
+                                    android:fontFamily="@font/jetbrains_mono"
+                                    android:paddingHorizontal="8dp"
+                                    android:paddingVertical="3dp"
+                                    android:text="📍 Line 1"
+                                    android:textColor="@color/cq_error"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tv_lab_error_title"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/space_grotesk"
+                                    android:text="Syntax / Logic Error"
+                                    android:textColor="@color/cq_error"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_lab_error_detail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:fontFamily="@font/space_grotesk"
+                                android:lineSpacingExtra="2dp"
+                                android:text="Problem description explanation here."
+                                android:textColor="@color/cq_text_primary"
+                                android:textSize="12sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:background="#FFFFFF"
+                                android:orientation="vertical"
+                                android:padding="8dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/space_grotesk"
+                                    android:text="💡 Isse Kaise Theek Karein (How to Fix):"
+                                    android:textColor="@color/cq_purple_deep"
+                                    android:textSize="11sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tv_lab_error_fix"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:fontFamily="@font/space_grotesk"
+                                    android:lineSpacingExtra="2dp"
+                                    android:text="Follow this guidance to fix your code."
+                                    android:textColor="@color/cq_text_secondary"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/tv_lab_console_output"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/jetbrains_mono"
+                        android:lineSpacingExtra="3dp"
+                        android:text="Ready. Click Run to test against sample input or Submit to verify against all required test cases."
+                        android:textColor="@color/cq_text_secondary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Savage AI Mentor Roast Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_lab_roast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/cq_error_bg"
+                app:cardCornerRadius="16dp"
+                app:strokeColor="@color/cq_error"
+                app:strokeWidth="1.5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_pill_roast"
+                            android:fontFamily="@font/jetbrains_mono"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="3dp"
+                            android:text="🔥 AI ROAST"
+                            android:textColor="@color/cq_error"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_lab_roast_title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/space_grotesk"
+                            android:text="Bug Alert!"
+                            android:textColor="@color/cq_error"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_lab_roast_body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/space_grotesk"
+                        android:lineSpacingExtra="2dp"
+                        android:text="Even a nested loop in Python wouldn't run this slow."
+                        android:textColor="@color/cq_text_primary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/cq_card_stroke" />
+
+    <!-- Sticky Bottom Action Bar: Run | Submit | Ask AI to Analyze Code -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cq_surface"
+        android:orientation="vertical"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_lab_run"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:text="Run"
+                android:textColor="@color/cq_easy"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                app:icon="@drawable/ic_code_play"
+                app:iconTint="@color/cq_easy"
+                app:strokeColor="@color/cq_easy" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_lab_submit"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:text="Submit"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/cq_primary"
+                app:cornerRadius="12dp" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_lab_ask_ai_analyze"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:text="Ask AI to Analyze Code"
+            android:textColor="@color/cq_cyan_bright"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            app:icon="@drawable/ic_nav_ai"
+            app:iconTint="@color/cq_cyan_bright"
+            app:strokeColor="@color/cq_cyan_bright" />
+    </LinearLayout>
+
+</LinearLayout>

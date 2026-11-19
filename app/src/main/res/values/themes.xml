@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.CodeQuestAI" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/cq_primary</item>
+        <item name="colorOnPrimary">@color/cq_on_primary</item>
+        <item name="colorPrimaryContainer">@color/cq_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/cq_on_primary_container</item>
+
+        <item name="colorSecondary">@color/cq_secondary</item>
+        <item name="colorOnSecondary">@color/cq_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/cq_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/cq_on_secondary_container</item>
+
+        <item name="android:colorBackground">@color/cq_background</item>
+        <item name="colorSurface">@color/cq_surface</item>
+        <item name="colorSurfaceVariant">@color/cq_surface_variant</item>
+        <item name="colorOnSurface">@color/cq_text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/cq_text_secondary</item>
+        <item name="colorOutline">@color/cq_card_stroke</item>
+        <item name="colorError">@color/cq_error</item>
+
+        <item name="android:statusBarColor">@color/cq_background</item>
+        <item name="android:navigationBarColor">@color/cq_nav_bg</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:fontFamily">@font/space_grotesk</item>
+        <item name="fontFamily">@font/space_grotesk</item>
+    </style>
+
+    <!-- Keep alias for manifest compatibility if referenced -->
+    <style name="Theme.MyApplication" parent="Theme.CodeQuestAI" />
+
+    <style name="ShapeAppearance.CodeQuestAI.Circle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="ShapeAppearance.CodeQuestAI.Rounded16" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="ShapeAppearance.CodeQuestAI.Rounded24" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">24dp</item>
+    </style>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Dark Violet / Deep Background -->
+    <path
+        android:fillColor="#090D1A"
+        android:pathData="M0,0h96v96h-96z" />
+    <!-- Dragon Horns / Crown -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M24,20L34,36L26,40zM72,20L62,36L70,40z" />
+    <!-- Dragon Skull Mask / Helmet -->
+    <path
+        android:fillColor="#7C3AED"
+        android:pathData="M48,16C32,16 22,28 22,48c0,20 12,32 26,32s26,-12 26,-32C74,28 64,16 48,16z" />
+    <!-- Glowing Visor / Dragon Eyes -->
+    <path
+        android:fillColor="#F43F5E"
+        android:pathData="M32,44l10,4 -10,4zM64,44l-10,4 10,4z" />
+    <!-- Neon Crest / Forehead Emblem -->
+    <path
+        android:fillColor="#06B6D4"
+        android:pathData="M48,26L52,38H44z" />
+    <!-- Cyber Jaw Plates -->
+    <path
+        android:fillColor="#1E1B4B"
+        android:pathData="M38,62h20v10H38z" />
+    <path
+        android:fillColor="#10B981"
+        android:pathData="M42,65h12v4H42z" />
+</vector>

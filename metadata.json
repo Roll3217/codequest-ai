@@ -1,0 +1,8 @@
+{
+  "name": "CodeQuest AI",
+  "description": "AI-powered coding learning platform with interactive coding labs, topic paths, daily quests, streaks, and an AI programming mentor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

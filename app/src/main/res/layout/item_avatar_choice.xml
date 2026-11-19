@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/avatar_item_container"
+    android:layout_width="74dp"
+    android:layout_height="74dp"
+    android:layout_marginHorizontal="6dp"
+    android:background="@drawable/bg_avatar_ring_unselected"
+    android:padding="4dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_avatar_option"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/label_choose_avatar"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.CodeQuestAI.Circle" />
+
+    <ImageView
+        android:id="@+id/iv_avatar_check"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_gravity="bottom|end"
+        android:contentDescription="@string/label_choose_avatar"
+        android:src="@drawable/ic_check_circle"
+        android:visibility="gone" />
+</FrameLayout>

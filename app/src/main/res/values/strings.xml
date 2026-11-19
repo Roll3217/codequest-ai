@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CodeQuest AI</string>
+    <string name="app_tagline">Master Code. Level Up with AI.</string>
+
+    <!-- Splash Screen -->
+    <string name="splash_subtitle">AI-Powered Coding Mastery &amp; Quest Engine</string>
+    <string name="splash_initializing">Initializing Neural Coding Workspace…</string>
+
+    <!-- Welcome Screen -->
+    <string name="welcome_badge">NEXT-GEN CODING ACADEMY</string>
+    <string name="welcome_title">Conquer Algorithms.\nLevel Up Your Code.</string>
+    <string name="welcome_subtitle">Practice curated coding challenges, build real daily streaks, track mistakes, and learn faster with an AI Programming Mentor.</string>
+    <string name="welcome_feature_1_title">Structured Topic Quests</string>
+    <string name="welcome_feature_1_desc">8 progressive paths from Programming Basics to Problem Solving</string>
+    <string name="welcome_feature_2_title">AI Mentor &amp; Code Analyzer</string>
+    <string name="welcome_feature_2_desc">Deep explanations, complexity analysis &amp; debugging insights</string>
+    <string name="welcome_feature_3_title">Real XP, Streaks &amp; Badges</string>
+    <string name="welcome_feature_3_desc">Earn XP only on verified solves and authentic daily goals</string>
+    <string name="btn_get_started">Begin Your Quest</string>
+    <string name="btn_already_have_account">I Already Have an Account</string>
+
+    <!-- Onboarding Screen -->
+    <string name="btn_skip">Skip</string>
+    <string name="btn_next">Next</string>
+    <string name="btn_back">Back</string>
+    <string name="btn_start_coding_now">Create Account &amp; Start</string>
+    <string name="onboard_title_1">Interactive Coding Lab &amp; Paths</string>
+    <string name="onboard_desc_1">Solve Easy, Medium, and Hard problems across Kotlin, Python, Java, C++, C, and JavaScript. Progress only increases on verified solutions.</string>
+    <string name="onboard_badge_1">8 TOPIC PATHS • 6 LANGUAGES</string>
+    <string name="onboard_title_2">24/7 AI Programming Mentor</string>
+    <string name="onboard_desc_2">Ask arbitrary coding questions or submit your code for syntax, logic, and runtime analysis with step-by-step time &amp; space complexity breakdowns.</string>
+    <string name="onboard_badge_2">AI MENTOR • CODE ANALYZER</string>
+    <string name="onboard_title_3">Daily Goals, Streaks &amp; Profile</string>
+    <string name="onboard_desc_3">Complete daily coding goals to ignite your streak, review mistakes in your personal notebook, unlock badges, and build your public coder profile.</string>
+    <string name="onboard_badge_3">STREAKS • XP LEVELS • BADGES</string>
+
+    <!-- Auth Common -->
+    <string name="login_title">Welcome Back, Coder</string>
+    <string name="login_subtitle">Sign in with your registered @gmail.com account to continue your coding streak.</string>
+    <string name="signup_title">Create Your Coder Identity</string>
+    <string name="signup_subtitle">Choose your avatar and register with a valid @gmail.com address.</string>
+
+    <string name="label_full_name">Full Name</string>
+    <string name="hint_full_name">e.g. Aarav Sharma</string>
+    <string name="label_gmail">Gmail Address</string>
+    <string name="hint_gmail">username@gmail.com</string>
+    <string name="label_password">Password</string>
+    <string name="hint_password">Minimum 6 characters</string>
+    <string name="label_confirm_password">Confirm Password</string>
+    <string name="hint_confirm_password">Re-enter your password</string>
+    <string name="label_choose_avatar">Select Profile Avatar or Gallery Photo</string>
+    <string name="btn_pick_gallery_photo">Upload from Gallery</string>
+    <string name="btn_login">Sign In to CodeQuest</string>
+    <string name="btn_signup">Create Account</string>
+    <string name="prompt_no_account">New to CodeQuest AI? Create an account</string>
+    <string name="prompt_have_account">Already registered? Sign in here</string>
+
+    <!-- Auth Validation Errors -->
+    <string name="error_name_required">Please enter your full name (at least 2 characters).</string>
+    <string name="error_email_required">Please enter your Gmail address.</string>
+    <string name="error_email_must_be_gmail">Invalid email domain. Only @gmail.com addresses are accepted.</string>
+    <string name="error_password_short">Password must be at least 6 characters long.</string>
+    <string name="error_password_mismatch">Passwords do not match. Please verify both fields.</string>
+    <string name="error_email_already_registered">This @gmail.com address is already registered. Please sign in instead.</string>
+    <string name="error_email_not_registered">No account found with this @gmail.com address. Please sign up first.</string>
+    <string name="error_incorrect_password">Incorrect password. Please check your credentials and try again.</string>
+
+    <!-- Bottom Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_practice">Practice</string>
+    <string name="nav_ai">AI</string>
+    <string name="nav_progress">Progress</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Appearance & Theme -->
+    <string name="theme_system">System Default</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="btn_logout">Log Out</string>
+
+    <!-- Production Account & Security Actions -->
+    <string name="btn_forgot_password">Forgot Password?</string>
+    <string name="dialog_forgot_password_title">Reset Password</string>
+    <string name="dialog_forgot_password_msg">Enter your registered email address to receive password reset instructions.</string>
+    <string name="btn_send_reset_link">Send Reset Link</string>
+    <string name="btn_delete_account">Delete Account</string>
+    <string name="dialog_delete_account_title">Delete Account</string>
+    <string name="dialog_delete_account_msg">Are you sure you want to permanently delete your CodeQuest AI account and all associated coding progress? This action cannot be undone.</string>
+    <string name="action_confirm_delete">Delete Permanently</string>
+    <string name="action_cancel">Cancel</string>
+</resources>

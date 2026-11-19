@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:name=".CodeQuestApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CodeQuestAI">
+
+        <!-- Splash Screen (Entry Point) -->
+        <activity
+            android:name=".ui.auth.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.CodeQuestAI">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Welcome Screen -->
+        <activity
+            android:name=".ui.auth.WelcomeActivity"
+            android:exported="false"
+            android:theme="@style/Theme.CodeQuestAI"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Onboarding Flow -->
+        <activity
+            android:name=".ui.auth.OnboardingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.CodeQuestAI" />
+
+        <!-- Login Screen (Keyboard Safe) -->
+        <activity
+            android:name=".ui.auth.LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.CodeQuestAI"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <!-- Signup Screen (Keyboard Safe) -->
+        <activity
+            android:name=".ui.auth.SignupActivity"
+            android:exported="false"
+            android:theme="@style/Theme.CodeQuestAI"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <!-- Authenticated Main Application Shell with Fixed Bottom Navigation -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.CodeQuestAI"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Phase 2: Problem Details Screen -->
+        <activity
+            android:name=".ui.practice.ProblemDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.CodeQuestAI"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Phase 2: Coding Lab Workspace (Keyboard Safe) -->
+        <activity
+            android:name=".ui.coding.CodingLabActivity"
+            android:exported="false"
+            android:theme="@style/Theme.CodeQuestAI"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <!-- Phase 2: 8-Topic Learning Path Screen -->
+        <activity
+            android:name=".ui.learning.LearningPathActivity"
+            android:exported="false"
+            android:theme="@style/Theme.CodeQuestAI" />
+
+        <!-- Phase 2: Dedicated Daily Goals Screen -->
+        <activity
+            android:name=".ui.home.DailyGoalsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.CodeQuestAI" />
+
+        <!-- Phase 3: Achievements & Badges Screen -->
+        <activity
+            android:name=".ui.achievements.AchievementsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.CodeQuestAI" />
+
+        <!-- Phase 3: Mistakes Notebook Screen -->
+        <activity
+            android:name=".ui.mistakes.MistakesNotebookActivity"
+            android:exported="false"
+            android:theme="@style/Theme.CodeQuestAI"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <!-- Phase 3: Bookmarks & Practice History Screen -->
+        <activity
+            android:name=".ui.practice.BookmarksHistoryActivity"
+            android:exported="false"
+            android:theme="@style/Theme.CodeQuestAI" />
+
+        <!-- Phase 3: Notifications Screen -->
+        <activity
+            android:name=".ui.settings.NotificationsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.CodeQuestAI" />
+
+        <!-- Phase 3: Preferences & Settings Screen -->
+        <activity
+            android:name=".ui.settings.SettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.CodeQuestAI"
+            android:windowSoftInputMode="adjustResize" />
+
+    </application>
+
+</manifest>

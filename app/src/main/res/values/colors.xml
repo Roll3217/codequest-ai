@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand Accents (Consistent across Light & Dark) -->
+    <color name="cq_purple_primary">#7C3AED</color>
+    <color name="cq_purple_bright">#8B5CF6</color>
+    <color name="cq_purple_glow">#A78BFA</color>
+    <color name="cq_purple_deep">#4C1D95</color>
+
+    <color name="cq_cyan">#06B6D4</color>
+    <color name="cq_cyan_secondary">#0891B2</color>
+    <color name="cq_cyan_bright">#06B6D4</color>
+    <color name="cq_cyan_glow">#22D3EE</color>
+    <color name="cq_cyan_deep">#164E63</color>
+
+    <!-- Semantic Status & Difficulty Colors -->
+    <color name="cq_success">#10B981</color>
+    <color name="cq_success_bg">#D1FAE5</color>
+    <color name="cq_warning">#F59E0B</color>
+    <color name="cq_warning_bg">#FEF3C7</color>
+    <color name="cq_error">#EF4444</color>
+    <color name="cq_error_bg">#FEE2E2</color>
+
+    <color name="cq_easy">#10B981</color>
+    <color name="cq_medium">#F59E0B</color>
+    <color name="cq_hard">#EF4444</color>
+    <color name="cq_xp_gold">#FBBF24</color>
+    <color name="cq_streak_flame">#F97316</color>
+
+    <!-- Light Mode Adaptive Surfaces & Text -->
+    <color name="cq_background">#F6F5FB</color>
+    <color name="cq_surface">#FFFFFF</color>
+    <color name="cq_surface_elevated">#F3F0FF</color>
+    <color name="cq_surface_variant">#EDE9FE</color>
+    <color name="cq_card_bg">#FFFFFF</color>
+    <color name="cq_card_elevated_bg">#F3F0FF</color>
+    <color name="cq_card_stroke">#DDD6FE</color>
+    <color name="cq_input_bg">#F8FAFC</color>
+    <color name="cq_nav_bg">#FFFFFF</color>
+
+    <color name="cq_primary">#7C3AED</color>
+    <color name="cq_on_primary">#FFFFFF</color>
+    <color name="cq_primary_container">#EDE9FE</color>
+    <color name="cq_on_primary_container">#4C1D95</color>
+
+    <color name="cq_secondary">#0891B2</color>
+    <color name="cq_on_secondary">#FFFFFF</color>
+    <color name="cq_secondary_container">#CFFAFE</color>
+    <color name="cq_on_secondary_container">#164E63</color>
+
+    <color name="cq_text_primary">#0F172A</color>
+    <color name="cq_text_secondary">#475569</color>
+    <color name="cq_text_muted">#64748B</color>
+    <color name="cq_divider">#E2E8F0</color>
+
+    <color name="cq_hero_gradient_start">#1E113A</color>
+    <color name="cq_hero_gradient_center">#151934</color>
+    <color name="cq_hero_gradient_end">#0B2239</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+</resources>
